@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+from django.core.checks import templates
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -44,7 +46,8 @@ INSTALLED_APPS = [
 
     'widget_tweaks',                            # uses 'django-widget-tweaks' app
     'crispy_forms',                             # uses 'django-crispy-forms' app
-    'login_required',                           # uses 'django-login-required-middleware' app
+    'login_required',
+    'crispy_bootstrap5',                        # uses 'django-login-required-middleware' app
 ]
 
 MIDDLEWARE = [
@@ -129,7 +132,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'                     # bootstrap template crispy-form uses
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'                     # bootstrap template crispy-form uses
 
 LOGIN_REDIRECT_URL = 'home'                             # sets the login redirect to the 'home' page after login
 
