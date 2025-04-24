@@ -11,4 +11,4 @@ class StockForm(forms.ModelForm):
 
     class Meta:
         model = Stock
-        fields = ['name', 'quantity']
+        fields =  '__all__'

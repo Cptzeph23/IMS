@@ -1,14 +1,15 @@
+
+
 from django.shortcuts import render
 from django.views.generic import View, TemplateView
 from inventoryapp.models import Stock
 from transactions.models import SaleBill, PurchaseBill
 
-
 class HomeView(View):
     template_name = "home.html"
-    def get(self, request):        
+    def get(self, request):
         labels = []
-        data = []        
+        data = []
         stockqueryset = Stock.objects.filter(is_deleted=False).order_by('-quantity')
         for item in stockqueryset:
             labels.append(item.name)
@@ -22,6 +23,3 @@ class HomeView(View):
             'purchases' : purchases
         }
         return render(request, self.template_name, context)
-
-class AboutView(TemplateView):
-    template_name = "../templates/about.html"

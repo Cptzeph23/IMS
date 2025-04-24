@@ -12,18 +12,19 @@ from django_filters.views import FilterView
 from inventoryapp.filters import StockFilter
 from inventoryapp.forms import StockForm
 
+from django.db import models
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 
 
+class Stock:
+    pass
 
-class Stock(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=30, unique=True, verbose_name='Name')
-    quantity = models.IntegerField(default=1)
-    is_deleted = models.BooleanField(default=False)
 
-    def __str__(self):
-        return self.name
-
+from .models import Stock
+from .forms import StockForm
+from django_filters.views import FilterView
+from .filters import StockFilter
 
 class StockListView(FilterView):
     filterset_class = StockFilter
@@ -76,4 +77,5 @@ class StockDeleteView(View):  # view class to delete stock
         stock.save()
         messages.success(request, self.success_message)
         return redirect('inventoryapp')
+
 
