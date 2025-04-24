@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'homepage',
-    'inventory',
+    'inventoryapp',
     'transactions',
 
     'widget_tweaks',                            # uses 'django-widget-tweaks' app
@@ -62,12 +62,12 @@ MIDDLEWARE = [
     'login_required.middleware.LoginRequiredMiddleware',    # middleware used for global login
 ]
 
-ROOT_URLCONF = 'core.urls'
+ROOT_URLCONF = 'templates.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["templates"],  # included 'templates' directory for django to access the html templates
+        'DIRS': ["templates"],                                           # included 'templates' directory for django to access the html templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

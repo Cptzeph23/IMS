@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import View, TemplateView
-from inventory.models import Stock
+from inventoryapp.models import Stock
 from transactions.models import SaleBill, PurchaseBill
 
 
@@ -24,4 +24,4 @@ class HomeView(View):
         return render(request, self.template_name, context)
 
 class AboutView(TemplateView):
-    template_name = "about.html"
+    template_name = "../templates/about.html"

@@ -1,5 +1,7 @@
 from django import forms
-from .models import Stock
+
+from inventoryapp.models import Stock
+
 
 class StockForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):                                                        # used to set css classes to the various fields

@@ -27,7 +27,7 @@ from .forms import (
     SaleItemFormset,
     SaleDetailsForm
 )
-from inventory.models import Stock
+from inventoryapp.models import Stock
 
 # shows a lists of all suppliers
 class SupplierListView(ListView):

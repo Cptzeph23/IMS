@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "../../templates/base.html" %}
 
 
 {% block title %} {{title}} {% endblock title %}
@@ -36,7 +36,7 @@
             {% if delbtn %}
                 <a href="{% url 'delete-stock' object.pk %}" class="btn ghost-red"> Delete Stock </a>
             {% endif %}
-            <a href="{% url 'inventory' %}" class="btn ghost-button">Cancel</a>
+            <a href="{% url 'inventoryapp' %}" class="btn ghost-button">Cancel</a>
         </div>
         
     </form>
